@@ -3,14 +3,16 @@
   src: url(./font/Acumin-BdPro.otf);
 }
 
-@keyframes slide {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(0%);
-  }
-}
+// @keyframes slide {
+//   0% {
+//     opacity: 0;
+//     transform: translateX(-33px);
+//   }
+//   100% {
+//     opacity: 1;
+//     transform: translateX(0%);
+//   }
+// }
 
 .App {
   /* On centre */
@@ -18,22 +20,24 @@
   width: 1920px;
   height: 1080px;
   box-sizing: border-box;
-  padding: 25px 20px;
-  opacity: 1;
   display: flex;
   flex-direction: row;
-  background: white;
+  background: grey;
 }
 
 .leftContainer {
   width: 150px;
+  height: 100%;
+  position: fixed;
   &.expanded {
     width: 100%;
+    transition: width 200ms;
+    z-index: 2;
   }
 
   .menuCollapsed {
-    width: 150px;
     height: 100%;
+    width: 150px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -42,7 +46,6 @@
   .menuExpanded {
     width: calc(100% - 150px);
     height: 100%;
-    animation: slide 1000ms linear;
   }
   background: white;
   height: 1080px;
@@ -103,7 +106,6 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  background: #fff;
   .row {
     display: flex;
     flex-direction: row;
@@ -153,12 +155,12 @@
 
 .rightContainer {
   width: calc(100% - 150px);
-  &.collapsed {
-    display: none;
-  }
+  left: 150px;
+  position: fixed;
+  // &.collapsed {
+  //   display: none;
+  // }
   height: 1080px;
-  position: relative;
-  width: 100%;
   height: 100%;
   // background: #f7fbfc;
   background: #f8f9fb;
@@ -185,7 +187,7 @@
     &.brocoli {
       background: url("/images/chou.png") no-repeat;
       top: 80px;
-      left: -100px;
+      left: 0;
     }
     animation: slideUp 0.8s ease-in-out forwards 0.8s;
   }
@@ -348,13 +350,6 @@ p {
 
 .outer-div {
   margin: 0 auto;
-  position: relative;
-  top: 500px;
-  opacity: 1;
-  .inner-div {
-    text-align: center;
-    padding-top: 45px;
-  }
 }
 
 @keyframes submenu {
@@ -495,4 +490,12 @@ p {
 .pageSlider-enter.pageSlider-enter-active > .page {
   transform: translate3d(0, 0, 0);
   transition: all 800ms ease-in-out;
+}
+
+.loadingContainer {
+  width: 100vw;
+  height: 100vh;
+  background: #fff;
+  display: flex;
+  align-items: center;
 }

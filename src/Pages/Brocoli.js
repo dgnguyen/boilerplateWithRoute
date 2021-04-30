@@ -1,17 +1,27 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Body from "../components/Body";
 import Menu from "../components/Menu";
+import Load from "../components/Load";
 
-const Brocolie =  () => {
-  return (
+const Brocoli = () => {
+  const [loading, setLoading] = useState(true);
+  const [toggleMenu, setToggleMenu] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+  });
+
+  return loading ? (
+    <div className="loadingContainer">
+      <Load />
+    </div>
+  ) : (
     <div className="App">
-      <div className="leftContainer">
-        <Menu />
-      </div>
-      <div className="rightContainer brocoli">
-        <Body page="brocoli" />
-      </div>
+      <Menu toggleMenu={toggleMenu} setToggleMenu={setToggleMenu} />
+      <Body toggleMenu={toggleMenu} page="brocoli" />
     </div>
   );
 };
-export default Brocolie
+export default Brocoli;

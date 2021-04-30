@@ -1,16 +1,27 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Body from "../components/Body";
 import Menu from "../components/Menu";
-import Panel from "../components/Panel";
+import Load from "../components/Load";
 
-const Home = ({ page, togglePage }) => {
+const Brocoli = () => {
+  const [loading, setLoading] = useState(true);
   const [toggleMenu, setToggleMenu] = useState(false);
-  return (
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+  });
+
+  return loading ? (
+    <div className="loadingContainer">
+      <Load />
+    </div>
+  ) : (
     <div className="App">
       <Menu toggleMenu={toggleMenu} setToggleMenu={setToggleMenu} />
       <Body toggleMenu={toggleMenu} page="pieapple" />
-      {/* {toggleMenu && <Panel />} */}
     </div>
   );
 };
-export default Home;
+export default Brocoli;

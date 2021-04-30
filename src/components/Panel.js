@@ -6,7 +6,7 @@ const Panel = () => {
   useEffect(() => {
     setTimeout(() => {
       setDelayTomate(true);
-    }, 2000);
+    }, 1000);
   });
   console.log({ delayTomate });
   const classNameTomate = delayTomate ? "show" : "hide";
