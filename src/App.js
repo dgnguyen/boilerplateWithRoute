@@ -1,8 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import "./App.scss";
-import Navigation from "./Route/Navigation";
-
-// import Panel from "./components/Panel";
+import Navigation from "./Pages/Navigation";
 
 function App() {
   return <Navigation />;

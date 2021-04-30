@@ -3,9 +3,20 @@ import "../App.scss";
 
 export default () => (
   <div className="header">
-    <div className="menu">our product</div>
     <div className="subMenu">
       <ul>
+        <li>
+          <div className="hyphen" />
+         <h1>Our product</h1> 
+        </li>
+      </ul>
+    </div>
+    <div className="subMenu">
+      <ul>
+        <li>
+          <div className="hyphen" />
+          pinapples
+        </li>
         <li>
           <div className="hyphen" />
           pinapples
@@ -34,14 +45,18 @@ export default () => (
           <div className="hyphen" />
           Cauliflowers
         </li>
+        <li>
+          <div className="hyphen" />
+          pinapples
+        </li>
       </ul>
     </div>
-    <div className="subMenu socialIcons">
-      <ul>
-        <li>twitter</li>
-        <li>facebook</li>
-        <li>twitter</li>
-      </ul>
+    <div className="socialIcons">
+        <div className="twitter"></div>
+        <div className="youtube"></div>
+        <div className="instagram"></div>
+        <div className="facebook"></div>
+       
     </div>
   </div>
 );
