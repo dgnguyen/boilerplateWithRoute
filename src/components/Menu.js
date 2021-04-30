@@ -1,32 +1,33 @@
 import React from "react";
-import {withRouter } from "react-router-dom";
-const Menu = ({history}) => {
+import { withRouter } from "react-router-dom";
+import Panel from "../components/Panel";
 
-  // console.log({history})
-
-  const btnMenu = history?.location?.pathname==='/tomate' ? 'btn-close' : 'btn-menu';
-
-  const toggleClass = () => {
-    if(btnMenu ==="btn-menu"){
-      history.push('/tomate')
-    } else {
-      history.push('/')
-    }
-  };
-
-
-return (
-<div className="leftContainer">
-      <div className="logo"></div>
-      <div className="panier"></div>
-      <div className="hyphen-ver"></div>
-      <div className= {btnMenu} onClick={toggleClass}></div>
-      <div className="hyphen-ver"></div>
-      <div className="search"></div>
-      <div className="orgabit">
-      <span style={{color: "#FBD848"}}>ORGA</span><span style={{color: "#39553A"}}>BITS</span></div>
-  </div>
-   
+const Menu = ({ history, toggleMenu, setToggleMenu }) => {
+  const btnMenu = toggleMenu ? "btn-close" : "btn-menu";
+  const classLeftContainer = toggleMenu ? "expanded" : "collpased";
+  return (
+    <div className={`leftContainer ${classLeftContainer}`}>
+      <div className="menuCollapsed">
+        <div className="logo"></div>
+        <div className="panier"></div>
+        <div className="hyphen-ver"></div>
+        <div
+          className={btnMenu}
+          onClick={() => setToggleMenu(!toggleMenu)}
+        ></div>
+        <div className="hyphen-ver"></div>
+        <div className="search"></div>
+        <div className="orgabit">
+          <span style={{ color: "#FBD848" }}>ORGA</span>
+          <span style={{ color: "#39553A" }}>BITS</span>
+        </div>
+      </div>
+      {toggleMenu && (
+        <div className="menuExpanded">
+          <Panel />
+        </div>
+      )}
+    </div>
   );
 };
 

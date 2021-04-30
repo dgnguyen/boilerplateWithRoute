@@ -1,17 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import Body from "../components/Body";
 import Menu from "../components/Menu";
+import Panel from "../components/Panel";
 
 const Home = ({ page, togglePage }) => {
+  const [toggleMenu, setToggleMenu] = useState(false);
   return (
     <div className="App">
-      <div className="leftContainer">
-        <Menu />
-      </div>
-      <div className="rightContainer pieapple">
-        <Body page="pieapple" />
-      </div>
+      <Menu toggleMenu={toggleMenu} setToggleMenu={setToggleMenu} />
+      <Body toggleMenu={toggleMenu} page="pieapple" />
+      {/* {toggleMenu && <Panel />} */}
     </div>
   );
 };
-export default  Home
+export default Home;
