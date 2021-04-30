@@ -2,7 +2,7 @@ import React from "react";
 import { withRouter } from "react-router-dom";
 import Panel from "../components/Panel";
 
-const Menu = ({ history, toggleMenu, setToggleMenu }) => {
+const Menu = ({ toggleMenu, setToggleMenu }) => {
   const btnMenu = toggleMenu ? "btn-close" : "btn-menu";
   const classLeftContainer = toggleMenu ? "expanded" : "collpased";
   return (
@@ -24,7 +24,7 @@ const Menu = ({ history, toggleMenu, setToggleMenu }) => {
       </div>
       {toggleMenu && (
         <div className="menuExpanded">
-          <Panel />
+          <Panel toggleMenu={toggleMenu} />
         </div>
       )}
     </div>

@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from "react";
 import "../App.scss";
 
-const Panel = () => {
+const Panel = ({ toggleMenu }) => {
   const [delayTomate, setDelayTomate] = useState(false);
   useEffect(() => {
     setTimeout(() => {
       setDelayTomate(true);
     }, 1000);
   });
-  console.log({ delayTomate });
+
   const classNameTomate = delayTomate ? "show" : "hide";
+  const cleanTomate = !toggleMenu ? "slideout" : "";
   return (
     <div className="panel">
       <div className="row">
@@ -73,7 +74,7 @@ const Panel = () => {
           </ul>
         </div>
 
-        <div className={`tomate ${classNameTomate}`} />
+        <div className={`tomate ${classNameTomate} ${cleanTomate}`} />
       </div>
 
       <div className="row">

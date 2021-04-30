@@ -3,17 +3,6 @@
   src: url(./font/Acumin-BdPro.otf);
 }
 
-// @keyframes slide {
-//   0% {
-//     opacity: 0;
-//     transform: translateX(-33px);
-//   }
-//   100% {
-//     opacity: 1;
-//     transform: translateX(0%);
-//   }
-// }
-
 .App {
   /* On centre */
   margin: 0 auto;
@@ -29,10 +18,15 @@
   width: 150px;
   height: 100%;
   position: fixed;
+
   &.expanded {
     width: 100%;
-    transition: width 200ms;
     z-index: 2;
+    transition: width 200ms;
+  }
+  &.collpased {
+    z-index: 2;
+    transition: width 1s;
   }
 
   .menuCollapsed {
@@ -140,14 +134,17 @@
     .tomate {
       position: absolute;
       background: url("images/tomPan.png") 0% 0% no-repeat padding-box;
-      width: 1050px;
-      height: 1050px;
-      display: none;
+      width: 950px;
+      height: 950px;
+      right: 0;
       &.show {
-        display: block;
+        transition: slideIn 200ms;
+      }
+      &.slideout {
+        transition: slideOut 200ms;
       }
       top: 70px;
-      right: -100px;
+
       animation: tomate 2s;
     }
   }
@@ -426,12 +423,22 @@ p {
 
 @keyframes slideIn {
   0% {
-    transform: translateX(500px) scale(0.2);
+    transform: translateX(70%);
   }
   100% {
-    transform: translateX(0px) scale(1);
+    transform: translateX(10%);
   }
 }
+
+@keyframes slideOut {
+  0% {
+    transform: translateX(10%);
+  }
+  100% {
+    transform: translateX(70%);
+  }
+}
+
 @keyframes slideUp {
   0% {
     transform: translateY(300px);
