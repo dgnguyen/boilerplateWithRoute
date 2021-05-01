@@ -3,7 +3,7 @@ import Body from "../components/Body";
 import Menu from "../components/Menu";
 import Load from "../components/Load";
 
-const Brocoli = () => {
+const PieApple = () => {
   const [loading, setLoading] = useState(true);
   const [toggleMenu, setToggleMenu] = useState(false);
   const [slide, setSlide] = useState(false);
@@ -41,4 +41,4 @@ const Brocoli = () => {
     </div>
   );
 };
-export default Brocoli;
+export default PieApple;
