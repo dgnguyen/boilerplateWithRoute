@@ -3,7 +3,7 @@ import Body from "../components/Body";
 import Menu from "../components/Menu";
 import Load from "../components/Load";
 
-const Home = () => {
+const Page = ({ page }) => {
   const [loading, setLoading] = useState(true);
   const [toggleMenu, setToggleMenu] = useState(false);
   const [slide, setSlide] = useState(false);
@@ -37,8 +37,8 @@ const Home = () => {
   ) : (
     <div className="App">
       <Menu toggleMenu={toggleMenu} setToggleMenu={handleSlide} slide={slide} />
-      <Body toggleMenu={toggleMenu} page="pieapple" />
+      <Body toggleMenu={toggleMenu} page={page} />
     </div>
   );
 };
-export default Home;
+export default Page;

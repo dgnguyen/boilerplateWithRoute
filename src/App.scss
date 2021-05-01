@@ -1,600 +1,106 @@
-// @font-face {
-//   font-family: "Acumin Pro";
-//   src: url(./font/Acumin-BdPro.otf);
-// }
-
-// .App {
-//   width: 100vw;
-//   height: 100vh;
-//   box-sizing: border-box;
-//   display: flex;
-//   flex-direction: row;
-//   background: grey;
-// }
-
-// .leftContainer {
-//   width: 150px;
-//   height: 100vh;
-//   position: fixed;
-
-//   &.expanded {
-//     width: 100%;
-//     z-index: 2;
-//     transition: width 200ms;
-//   }
-//   &.collpased {
-//     z-index: 2;
-//     transition: width 1s;
-//   }
-
-//   .menuCollapsed {
-//     height: 100%;
-//     width: 150px;
-//     display: flex;
-//     flex-direction: column;
-//     justify-content: space-around;
-//     align-items: center;
-//   }
-//   .menuExpanded {
-//     width: calc(100% - 150px);
-//     height: 100%;
-//   }
-//   background: white;
-//   display: flex;
-//   align-items: center;
-//   .logo {
-//     background: url("images/logoRabbit@2x.png") no-repeat;
-//     width: 69px;
-//     height: 57px;
-//   }
-//   .panier {
-//     background: url("images/panier.png") no-repeat;
-//     width: 69px;
-//     height: 57px;
-//   }
-//   .hyphen-ver {
-//     background: url("images/hyphen-vertical.PNG") no-repeat;
-//     width: 69px;
-//     height: 57px;
-//   }
-//   .btn-menu {
-//     background: url("images/btn-menu.png") no-repeat;
-//     width: 69px;
-//     height: 57px;
-//     cursor: pointer;
-//     transition: height 500ms ease, width 500ms ease;
-//     &:hover {
-//       width: 72px;
-//       height: 60px;
-//     }
-//   }
-
-//   .btn-close {
-//     background: url("images/btn-close.png") no-repeat;
-//     width: 69px;
-//     height: 57px;
-//     cursor: pointer;
-//   }
-//   .search {
-//     background: url("images/search.png") no-repeat;
-//     width: 69px;
-//     height: 57px;
-//   }
-//   .orgabit {
-//     width: 20px;
-//     height: 102px;
-//     transform: matrix(0, -1, 1, 0, 0, 0);
-//     font: normal normal bold 20px/28px Acumin Pro;
-//     letter-spacing: 0px;
-//     opacity: 1;
-//     margin-left: 30px;
-//   }
-// }
-
-// .panel {
-//   width: 100%;
-//   height: 100%;
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: space-around;
-//   .row {
-//     display: flex;
-//     flex-direction: row;
-
-//     .hyphen {
-//       width: 30px;
-//       background: #f3d145;
-//       height: 1px;
-//       margin-right: 10px;
-//     }
-
-//     .subMenu {
-//       li {
-//         display: flex;
-//         align-items: center;
-//         margin: 30px 50px;
-//         list-style-type: none;
-//       }
-//     }
-
-//     .subMenu1 {
-//       li {
-//         display: none;
-//       }
-//     }
-//     .subMenu2 {
-//       li {
-//         display: none;
-//       }
-//     }
-
-//     .tomate {
-//       position: fixed;
-//       background-image: url("images/tomPan.png");
-//       width: 500px;
-//       height: 500px;
-//       right: 0;
-//       background-size: contain;
-//       &.show {
-//         transition: slideIn 200ms;
-//       }
-//       &.slideout {
-//         transition: slideOut 200ms;
-//       }
-//       top: 70px;
-
-//       animation: tomate 2s;
-//     }
-//   }
-// }
-
-// .rightContainer {
-//   width: calc(100% - 150px);
-//   left: 150px;
-//   position: fixed;
-//   // &.collapsed {
-//   //   display: none;
-//   // }
-//   height: 100vh;
-//   // background: #f7fbfc;
-//   background: #f8f9fb;
-//   .titleContainer {
-//     position: absolute;
-//     width: 70%;
-//     opacity: 0.8;
-//     right: 0;
-//     .title {
-//       width: 100%;
-//       font: normal normal bold 64px Acumin Pro;
-//     }
-//   }
-//   .bigBg {
-//     position: absolute;
-//     top: 160px;
-//     &.pieapple {
-//       background-image: url("images/ananas.png");
-//       width: 400px;
-//       height: 500px;
-//       left: 46px;
-//     }
-//     &.brocoli {
-//       width: 600px;
-//       height: 549px;
-//       left: 0;
-//       background-image: url("/images/chou.png");
-//     }
-//     background-size: contain;
-//     background-repeat: no-repeat;
-//     animation: slideUp 0.8s ease-in-out forwards 0.8s;
-//   }
-//   .header {
-//     position: relative;
-//     height: 200px;
-//     display: flex;
-//     align-items: center;
-//     justify-content: space-around;
-//     // background: #f8f9fb;
-
-//     .hyphen {
-//       width: 30px;
-//       background: #f3d145;
-//       height: 1px;
-//       margin-right: 10px;
-     
-// }
-
-//     .subMenu {
-//       li {
-//         display: flex;
-//         align-items: center;
-//         margin: 15px 0;
-//         list-style-type: none;
-//       }
-//       animation: submenu 2s linear forwards;
-//       -webkit-animation: submenu 2s linear forwards;
-//     }
-//     .socialIcons {
-//       .twitter {
-//         background: url("images/twitter.png") no-repeat;
-//         top: 67px;
-//         left: 1839px;
-//         width: 21px;
-//         height: 21px;
-//         opacity: 1;
-//         padding-bottom: 10px;
-//       }
-//       .youtube {
-//         top: 116px;
-//         left: 1839px;
-//         width: 21px;
-//         height: 21px;
-//         background: url("images/youtube.png") 0% 0% no-repeat;
-//         border-radius: 18px;
-//         opacity: 1;
-//         padding-bottom: 10px;
-//       }
-//       .instagram {
-//         top: 166px;
-//         left: 1839px;
-//         width: 21px;
-//         height: 21px;
-//         background: url("images/instagram.png") 0% 0% no-repeat;
-//         opacity: 1;
-//         padding-bottom: 10px;
-//       }
-//       .facebook {
-//         top: 215px;
-//         left: 1839px;
-//         width: 21px;
-//         height: 21px;
-//         background: url("images/face.png") 0% 0% no-repeat;
-//         opacity: 1;
-//       }
-//       animation: iconSocio 2s linear;
-//       -webkit-animation: iconSocio 2s linear;
-//     }
-//   }
-//   .pagination {
-//     position: fixed;
-//     bottom: 0;
-//     width: 100%;
-//     display: flex;
-//     align-items: center;
-//     .pageNumber {
-//       padding: 20px;
-//     }
-//     .thumbContainer {
-//       margin-left: auto;
-//       display: flex;
-//       width: 420px;
-//       .togglePage {
-//         background: #f1d145;
-//         width: 108px;
-//         height: 54px;
-//         margin-right: 50px;
-//         text-align: center;
-//         color: #ffffff;
-//         padding-top: 50px;
-//         background: linear-gradient(to left, #f1d145 50%, #375238 50%) right;
-//         background-size: 200%;
-//         transition: 0s;
-//       }
-//       .togglePage:hover {
-//         background-position: left;
-//         transition: 0.6s ease-out;
-//       }
-//       .thumbnail {
-//         width: 161px;
-//         height: 107px;
-//         &.brocoli {
-//           background: url("images/next-fruit.png") no-repeat transparent;
-//         }
-//         &.pieapple {
-//           background: url("images/next-vege.png") no-repeat transparent;
-//         }
-//       }
-//     }
-//   }
-// }
-// .loading {
-//   width: 2100px;
-//   height: 1080px;
-//   position: absolute;
-//   background: #f7fbfc;
-//   opacity: 0;
-//   top: -10px;
-//   left: -150px;
-// }
-// .btn {
-//   width: 208px;
-//   height: 38px;
-//   border: none;
-//   padding-top: 15px;
-//   text-align: center;
-//   opacity: 1;
-//   color: white;
-//   border: none;
-//   cursor: pointer;
-//   background: linear-gradient(to left, #f1d145 50%, #375238 50%) right;
-//   background-size: 200%;
-//   transition: 0s;
-// }
-// .btn:hover {
-//   background-position: left;
-//   transition: 0.6s ease-out;
-// }
-
-// .subtitle {
-//   background: #ffffff 0% 0% no-repeat padding-box;
-//   opacity: 0.5;
-//   text-align: left;
-//   padding: 20px;
-// }
-// p {
-//   text-align: left;
-//   font: normal normal bold 12px/14px Acumin Pro;
-//   color: #375238;
-//   opacity: 1;
-// }
-
-// .outer-div {
-//   margin: 0 auto;
-// }
-
-// @keyframes submenu {
-//   0% {
-//     transform: translateX(0px);
-//     opacity: 1;
-//   }
-//   50% {
-//     transform: translateX(-700px);
-//     opacity: 0;
-//   }
-//   100% {
-//     transform: translateX(0px);
-//     opacity: 1;
-//   }
-// }
-
-// @keyframes iconSocio {
-//   0% {
-//     transform: translateX(0px);
-//     opacity: 1;
-//   }
-//   50% {
-//     transform: translateX(200px);
-//     opacity: 0;
-//   }
-//   100% {
-//     transform: translateX(0px);
-//     opacity: 1;
-//   }
-// }
-
-// @keyframes tomate {
-//   0% {
-//     transform: translateX(500px);
-//     opacity: 0;
-//   }
-//   100% {
-//     transform: translateX(0px);
-//     opacity: 1;
-//   }
-// }
-
-// @keyframes panel {
-//   0% {
-//     transform: translateX(-700px);
-//     opacity: 0;
-//   }
-//   100% {
-//     transform: translateX(0px);
-//     opacity: 1;
-//   }
-// }
-// @keyframes btn-next {
-//   0% {
-//     background-color: #124215;
-//     left: 0px;
-//   }
-//   100% {
-//     background-color: #f3d145;
-//   }
-// }
-
-// @keyframes btn-menu {
-//   0% {
-//     width: 69px;
-//     height: 57px;
-//   }
-//   100% {
-//     width: 73px;
-//     height: 60px;
-//   }
-// }
-
-// @keyframes slideIn {
-//   0% {
-//     transform: translateX(70%);
-//   }
-//   100% {
-//     transform: translateX(10%);
-//   }
-// }
-
-// @keyframes slideOut {
-//   0% {
-//     transform: translateX(10%);
-//   }
-//   100% {
-//     transform: translateX(70%);
-//   }
-// }
-
-// @keyframes slideUp {
-//   0% {
-//     transform: translateY(300px);
-//     display: none;
-//   }
-//   100% {
-//     transform: translateY(0px);
-//   }
-// }
-
-// @keyframes expand {
-//   0% {
-//     transform: translateX(1400px);
-//   }
-//   100% {
-//     transform: translateX(0px);
-//   }
-// }
-
-// @keyframes partytime {
-//   0% {
-//     background-position: 83% 0%;
-//   }
-//   50% {
-//     background-position: 18% 100%;
-//   }
-//   100% {
-//     background-position: 83% 0%;
-//   }
-// }
-
-// // page transition
-// .pageSlider-exit > .page {
-//   z-index: 1;
-// }
-
-// .pageSlider-enter > .page {
-//   z-index: 10;
-// }
-
-// .pageSlider-enter.left > .page {
-//   transform: translate3d(100%, 0, 0);
-// }
-
-// .pageSlider-enter.right > .page {
-//   transform: translate3d(-100%, 0, 0);
-// }
-
-// .pageSlider-exit.left > .page {
-//   transform: translate3d(-100%, 0 0);
-// }
-// .pageSlider-exit.right > .page {
-//   transform: translate3d(100%, 0, 0);
-// }
-
-// .pageSlider-enter.pageSlider-enter-active > .page {
-//   transform: translate3d(0, 0, 0);
-//   transition: all 800ms ease-in-out;
-// }
-
-// .loadingContainer {
-//   width: 100vw;
-//   height: 100vh;
-//   background: #fff;
-//   display: flex;
-//   align-items: center;
-// }
-
-
 @font-face {
   font-family: "Acumin Pro";
   src: url(./font/Acumin-BdPro.otf);
 }
 
 .App {
-  /* On centre */
-  margin: 0 auto;
-  padding-top: 100px;
-  width: 1920px;
-  height: 1080px;
+  width: 100vw;
+  height: 100vh;
   box-sizing: border-box;
   display: flex;
   flex-direction: row;
+  background: grey;
+}
 
+.leftContainer {
+  width: 150px;
+  height: 100vh;
+  position: fixed;
 
-  .leftContainer {
-    width: 150px;
-    height: 1080px;
-    position: fixed;
-   
-
-    &.expanded {
-      width: 100%;
-      z-index: 2;
-      transition: width 2s;
-    
+  &.expanded {
+    width: 100%;
+    z-index: 2;
+    transition: width 200ms;
   }
-    &.collpased {
-      z-index: 2;
-      transition: width 1s;
-    }
+  &.collpased {
+    z-index: 2;
+    transition: width 1s;
+  }
 
-    .menuCollapsed {
-      height: 100%;
-      width: 150px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-      align-items: center;
-    }
-    .menuExpanded {
-      width: 1770px;
-      height: 100%;
-    }
-    background: white;
-    height: 1080px;
+  .menuCollapsed {
+    height: 100%;
+    width: 150px;
     display: flex;
+    flex-direction: column;
+    justify-content: space-around;
     align-items: center;
-    .logo {
-      background: url("images/logoRabbit@2x.png") no-repeat;
-      width: 69px;
-      height: 57px;
-    }
-    .panier {
-      background: url("images/panier.png") no-repeat;
-      width: 69px;
-      height: 57px;
-    }
-    .hyphen-ver {
-      background: url("images/hyphen-vertical.PNG") no-repeat;
-      width: 69px;
-      height: 57px;
-    }
-    .btn-menu {
-      background: url("images/btn-menu.png") no-repeat;
-      width: 69px;
-      height: 57px;
-      cursor: pointer;
-      transition: height 500ms ease, width 500ms ease;
-      &:hover {
-        width: 72px;
-        height: 60px;
-      }
-    }
+  }
+  background: white;
+  display: flex;
+  align-items: center;
 
-  .btn-close {
-    background: url("images/btn-close.png") no-repeat;
+  .logo {
+    background: url("images/logoRabbit@2x.png") no-repeat;
     width: 69px;
     height: 57px;
+    background-size: contain;
+  }
+  .panier {
+    background: url("images/panier.png") no-repeat;
+    width: 30px;
+    height: 20px;
+    background-size: contain;
+  }
+  .hyphen-ver {
+    background: url("images/hyphen-vertical.PNG") no-repeat;
+    width: 17px;
+    height: 51px;
+    background-size: contain;
+  }
+  .btn-menu {
+    background: url("images/btn-menu.png") center center no-repeat;
+    width: 60px;
+    height: 60px;
+    background-size: initial;
     cursor: pointer;
+    transition: height 500ms ease, width 500ms ease;
+    &:hover {
+      background-size: contain;
+    }
+  }
+
+  .btn-close {
+    background: url("images/btn-close.png") center center no-repeat;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    background-size: initial;
+    &:hover {
+      background-size: contain;
+    }
   }
   .search {
     background: url("images/search.png") no-repeat;
-    width: 69px;
-    height: 57px;
+    width: 16px;
+    height: 16px;
+    background-size: contain;
   }
   .orgabit {
     width: 20px;
-    height: 102px;
     transform: matrix(0, -1, 1, 0, 0, 0);
     font: normal normal bold 20px/28px Acumin Pro;
-    letter-spacing: 0px;
-    opacity: 1;
-    margin-left: 30px;
+    margin-top: 50px;
+  }
+}
+
+.menuExpanded {
+  width: calc(100% - 150px);
+  height: 100%;
+  &.show {
+    display: block;
+  }
+  &.hide {
+    display: none;
   }
 }
 
@@ -619,7 +125,7 @@
       li {
         display: flex;
         align-items: center;
-        margin: 30px 100px;
+        margin: 30px 50px;
         list-style-type: none;
       }
     }
@@ -634,62 +140,68 @@
         display: none;
       }
     }
-  
+  }
 }
-.tomate {
+
+.slideTomate {
+  right: 0;
   position: absolute;
-  background: url("images/tomPan.png") 0% 0% no-repeat padding-box;
-  width: 950px;
-  height: 950px;
-  right: 450px;
-  top: 90px;
-  &.show {
-    transition: slideIn 200ms;
-  }
-  &.slideout {
-    transition: slideOut 200ms;
-  }
   top: 70px;
-
-  //  animation: tomate 2s;
-}
-
+  .tomate {
+    background-image: url("images/tomPan.png");
+    width: 1px;
+    height: 500px;
+    opacity: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: all 1s ease;
+    &.slideIn {
+      opacity: 1;
+      width: 500px;
+    }
+  }
 }
 
 .rightContainer {
-  width: 1770px;
-  height: 1080px;
+  width: calc(100% - 150px);
+  left: 150px;
   position: fixed;
-
+  // &.collapsed {
+  //   display: none;
+  // }
+  height: 100vh;
+  // background: #f7fbfc;
   background: #f8f9fb;
   .titleContainer {
     position: absolute;
-    right: 100px;
-    margin-top: 100px;
-    width: 60%;
+    width: 70%;
     opacity: 0.8;
+    right: 0;
     .title {
-      font: normal normal bold 150px/120px Acumin Pro;
-      letter-spacing: 7.5px;
+      width: 100%;
+      font: normal normal bold 64px Acumin Pro;
     }
   }
   .bigBg {
     position: absolute;
-    width: calc(100% - 150px);
-    height: 1080px;
-    left: 150px;
-    top: 160px;
+    bottom: 0;
+    opacity: 0;
+    animation: slideUp 0.8s ease-in-out forwards 0.8s;
+    img {
+      width: 100%;
+    }
     &.pieapple {
-      background: url("images/ananas.png") no-repeat;
+      // background-image: url("images/ananas.png");
+      width: 340px;
+      height: 500px;
+      left: 46px;
     }
     &.brocoli {
-      background: url("/images/chou.png") no-repeat;
-      top: 80px;
+      width: 100%;
+      height: 654px;
       left: 0;
     }
-    animation: slideUp 0.8s ease-in-out forwards 0.8s;
   }
- 
   .header {
     position: relative;
     height: 200px;
@@ -757,17 +269,18 @@
     }
   }
   .pagination {
-    position: absolute;
-    margin-top: 650px;
-    width: 1770px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
     display: flex;
     align-items: center;
     .pageNumber {
-      left: 20px;
+      padding: 20px;
     }
     .thumbContainer {
       margin-left: auto;
       display: flex;
+      width: 420px;
       .togglePage {
         background: #f1d145;
         width: 108px;
@@ -826,23 +339,14 @@
 }
 
 .subtitle {
-  top: 950px;
-  left: 596px;
-  width: 977px;
-  height: 105px;
   background: #ffffff 0% 0% no-repeat padding-box;
   opacity: 0.5;
   text-align: left;
-  padding-top: 30px;
-  padding-left: 20px;
+  padding: 20px;
 }
 p {
-  position: absolute;
-  width: 900px;
-  height: 26px;
   text-align: left;
   font: normal normal bold 12px/14px Acumin Pro;
-  letter-spacing: 0.9px;
   color: #375238;
   opacity: 1;
 }
@@ -850,7 +354,7 @@ p {
 .outer-div {
   margin: 0 auto;
 }
-}
+
 @keyframes submenu {
   0% {
     transform: translateX(0px);
@@ -934,7 +438,7 @@ p {
 
 @keyframes slideOut {
   0% {
-    transform: translateX(10%);
+    transform: translateX(0%);
   }
   100% {
     transform: translateX(70%);
@@ -947,6 +451,7 @@ p {
     opacity: 0;
   }
   100% {
+    opacity: 1;
     transform: translateY(0px);
   }
 }

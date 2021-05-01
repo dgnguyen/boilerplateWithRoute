@@ -4,7 +4,7 @@ import { withRouter } from "react-router-dom";
 
 const Body = ({ page, history, toggleMenu }) => {
   const classRightContainer = toggleMenu ? "collapsed" : "expanded";
-
+  const srcImg = page === "pieapple" ? "ananas" : "chou";
   return (
     <div className={`rightContainer ${classRightContainer}`}>
       <div className="header">
@@ -64,7 +64,9 @@ const Body = ({ page, history, toggleMenu }) => {
         </div>
       </div>
 
-      <div className={`bigBg ${page}`} />
+      <div className={`bigBg ${page}`}>
+        <img src={`/images/${srcImg}.png`} />
+      </div>
       <div className={`titleContainer`}>
         <div className="title">
           <span style={{ color: "#FBD848" }}>Our fruit & vegetables are</span>{" "}
@@ -88,15 +90,19 @@ const Body = ({ page, history, toggleMenu }) => {
             color: "#F1D145",
             fontSize: "70px",
             fontFamily: "Acumin Pro",
-          }}>
+          }}
+        >
           {page === "pieapple" ? 1 : 2}{" "}
+          <span
+            style={{
+              color: "#375238",
+              fontSize: "30px",
+              fontFamily: "Acumin Pro",
+            }}
+          >
+            / 2
+          </span>
         </div>
-        <span
-          style={{
-            color: "#375238",
-            fontSize: "30px",
-            fontFamily: "Acumin Pro",
-          }} > / 2</span>
 
         <div className="thumbContainer">
           <div className={`thumbnail ${page}`}></div>
