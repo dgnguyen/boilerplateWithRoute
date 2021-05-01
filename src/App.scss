@@ -34,9 +34,6 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    > div {
-      background-size: contain;
-    }
   }
   background: white;
   display: flex;
@@ -46,43 +43,47 @@
     background: url("images/logoRabbit@2x.png") no-repeat;
     width: 69px;
     height: 57px;
+    background-size: contain;
   }
   .panier {
     background: url("images/panier.png") no-repeat;
     width: 30px;
     height: 20px;
+    background-size: contain;
   }
   .hyphen-ver {
     background: url("images/hyphen-vertical.PNG") no-repeat;
     width: 17px;
     height: 51px;
+    background-size: contain;
   }
   .btn-menu {
-    background: url("images/btn-menu.png") no-repeat;
-    width: 45px;
-    height: 45px;
+    background: url("images/btn-menu.png") center center no-repeat;
+    width: 60px;
+    height: 60px;
+    background-size: initial;
     cursor: pointer;
     transition: height 500ms ease, width 500ms ease;
     &:hover {
-      width: 60px;
-      height: 60px;
+      background-size: contain;
     }
   }
 
   .btn-close {
-    background: url("images/btn-close.png") no-repeat;
-    width: 45px;
-    height: 45px;
+    background: url("images/btn-close.png") center center no-repeat;
+    width: 60px;
+    height: 60px;
     cursor: pointer;
+    background-size: initial;
     &:hover {
-      width: 60px;
-      height: 60px;
+      background-size: contain;
     }
   }
   .search {
     background: url("images/search.png") no-repeat;
     width: 16px;
     height: 16px;
+    background-size: contain;
   }
   .orgabit {
     width: 20px;
