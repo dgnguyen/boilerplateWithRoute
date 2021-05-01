@@ -4,7 +4,6 @@ import Load from "../components/Load";
 const Loading = () => {
   return (
     <div className="App">
-   
       <div className="rightContainer loading">
         <Load page="loading" />
       </div>

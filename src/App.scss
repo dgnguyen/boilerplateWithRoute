@@ -52,7 +52,7 @@
     background-size: contain;
   }
   .hyphen-ver {
-    background: url("images/hyphen-vertical.PNG") no-repeat;
+    background: url("images/hyphen-vertical.png") no-repeat;
     width: 17px;
     height: 51px;
     background-size: contain;
@@ -166,11 +166,8 @@
   width: calc(100% - 150px);
   left: 150px;
   position: fixed;
-  // &.collapsed {
-  //   display: none;
-  // }
+  
   height: 100vh;
-  // background: #f7fbfc;
   background: #f8f9fb;
   .titleContainer {
     position: absolute;
@@ -191,7 +188,6 @@
       width: 100%;
     }
     &.pieapple {
-      // background-image: url("images/ananas.png");
       width: 340px;
       height: 500px;
       left: 46px;
@@ -208,7 +204,6 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-    // background: #f8f9fb;
 
     .hyphen {
       width: 30px;
@@ -477,34 +472,6 @@ p {
   }
 }
 
-// page transition
-.pageSlider-exit > .page {
-  z-index: 1;
-}
-
-.pageSlider-enter > .page {
-  z-index: 10;
-}
-
-.pageSlider-enter.left > .page {
-  transform: translate3d(100%, 0, 0);
-}
-
-.pageSlider-enter.right > .page {
-  transform: translate3d(-100%, 0, 0);
-}
-
-.pageSlider-exit.left > .page {
-  transform: translate3d(-100%, 0 0);
-}
-.pageSlider-exit.right > .page {
-  transform: translate3d(100%, 0, 0);
-}
-
-.pageSlider-enter.pageSlider-enter-active > .page {
-  transform: translate3d(0, 0, 0);
-  transition: all 800ms ease-in-out;
-}
 
 .loadingContainer {
   width: 100vw;
