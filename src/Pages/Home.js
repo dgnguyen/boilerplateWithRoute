@@ -6,6 +6,23 @@ import Load from "../components/Load";
 const Brocoli = () => {
   const [loading, setLoading] = useState(true);
   const [toggleMenu, setToggleMenu] = useState(false);
+  const [slide, setSlide] = useState(false);
+
+  const handleSlide = (value) => {
+    if (value) {
+      // open menu, show menu before tomate
+      setToggleMenu(value);
+      setTimeout(() => {
+        setSlide(value);
+      }, 500);
+    } else {
+      // hide menu, hide tomate before menu
+      setSlide(value);
+      setTimeout(() => {
+        setToggleMenu(value);
+      }, 500);
+    }
+  };
 
   useEffect(() => {
     setTimeout(() => {
@@ -19,7 +36,7 @@ const Brocoli = () => {
     </div>
   ) : (
     <div className="App">
-      <Menu toggleMenu={toggleMenu} setToggleMenu={setToggleMenu} />
+      <Menu toggleMenu={toggleMenu} setToggleMenu={handleSlide} slide={slide} />
       <Body toggleMenu={toggleMenu} page="pieapple" />
     </div>
   );

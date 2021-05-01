@@ -2,7 +2,7 @@ import React from "react";
 import { withRouter } from "react-router-dom";
 import Panel from "../components/Panel";
 
-const Menu = ({ toggleMenu, setToggleMenu }) => {
+const Menu = ({ toggleMenu, setToggleMenu, slide }) => {
   const btnMenu = toggleMenu ? "btn-close" : "btn-menu";
   const classLeftContainer = toggleMenu ? "expanded" : "collpased";
   return (
@@ -11,10 +11,7 @@ const Menu = ({ toggleMenu, setToggleMenu }) => {
         <div className="logo"></div>
         <div className="panier"></div>
         <div className="hyphen-ver"></div>
-        <div
-          className={btnMenu}
-          onClick={() => setToggleMenu(!toggleMenu)}
-        ></div>
+        <div className={btnMenu} onClick={() => setToggleMenu(!slide)}></div>
         <div className="hyphen-ver"></div>
         <div className="search"></div>
         <div className="orgabit">
@@ -22,11 +19,7 @@ const Menu = ({ toggleMenu, setToggleMenu }) => {
           <span style={{ color: "#39553A" }}>BITS</span>
         </div>
       </div>
-      {toggleMenu && (
-        <div className="menuExpanded">
-          <Panel toggleMenu={toggleMenu} />
-        </div>
-      )}
+      <Panel slide={slide} toggleMenu={toggleMenu} />
     </div>
   );
 };
