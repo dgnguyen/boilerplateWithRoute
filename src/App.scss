@@ -34,10 +34,14 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    > div {
+      background-size: contain;
+    }
   }
   background: white;
   display: flex;
   align-items: center;
+
   .logo {
     background: url("images/logoRabbit@2x.png") no-repeat;
     width: 69px;
@@ -45,45 +49,46 @@
   }
   .panier {
     background: url("images/panier.png") no-repeat;
-    width: 69px;
-    height: 57px;
+    width: 30px;
+    height: 20px;
   }
   .hyphen-ver {
     background: url("images/hyphen-vertical.PNG") no-repeat;
-    width: 69px;
-    height: 57px;
+    width: 17px;
+    height: 51px;
   }
   .btn-menu {
     background: url("images/btn-menu.png") no-repeat;
-    width: 69px;
-    height: 57px;
+    width: 45px;
+    height: 45px;
     cursor: pointer;
     transition: height 500ms ease, width 500ms ease;
     &:hover {
-      width: 72px;
+      width: 60px;
       height: 60px;
     }
   }
 
   .btn-close {
     background: url("images/btn-close.png") no-repeat;
-    width: 69px;
-    height: 57px;
+    width: 45px;
+    height: 45px;
     cursor: pointer;
+    &:hover {
+      width: 60px;
+      height: 60px;
+    }
   }
   .search {
     background: url("images/search.png") no-repeat;
-    width: 69px;
-    height: 57px;
+    width: 16px;
+    height: 16px;
   }
   .orgabit {
     width: 20px;
-    height: 102px;
     transform: matrix(0, -1, 1, 0, 0, 0);
     font: normal normal bold 20px/28px Acumin Pro;
-    letter-spacing: 0px;
-    opacity: 1;
-    margin-left: 30px;
+    margin-top: 50px;
   }
 }
 
@@ -178,7 +183,7 @@
   }
   .bigBg {
     position: absolute;
-    top: 160px;
+    bottom: 0;
     &.pieapple {
       background-image: url("images/ananas.png");
       width: 400px;
@@ -187,7 +192,7 @@
     }
     &.brocoli {
       width: 600px;
-      height: 549px;
+      height: 475px;
       left: 0;
       background-image: url("/images/chou.png");
     }
