@@ -12,6 +12,7 @@ const Panel = ({ toggleMenu }) => {
   const classNameTomate = delayTomate ? "show" : "hide";
   const cleanTomate = !toggleMenu ? "slideout" : "";
   return (
+    <>
     <div className="panel">
       <div className="row">
         <div className="subMenu">
@@ -74,7 +75,6 @@ const Panel = ({ toggleMenu }) => {
           </ul>
         </div>
 
-        <div className={`tomate ${classNameTomate} ${cleanTomate}`} />
       </div>
 
       <div className="row">
@@ -138,6 +138,8 @@ const Panel = ({ toggleMenu }) => {
         </div>
       </div>
     </div>
+    <div className={`tomate ${classNameTomate} ${cleanTomate}`} />
+    </>
   );
 };
 export default Panel;
