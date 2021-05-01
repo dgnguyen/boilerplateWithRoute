@@ -91,16 +91,16 @@ const Body = ({ page, history, toggleMenu }) => {
           }}
         >
           {page === "pieapple" ? 1 : 2}{" "}
+          <span
+            style={{
+              color: "#375238",
+              fontSize: "30px",
+              fontFamily: "Acumin Pro",
+            }}
+          >
+            / 2
+          </span>
         </div>
-        <span
-          style={{
-            color: "#375238",
-            fontSize: "30px",
-            fontFamily: "Acumin Pro",
-          }}
-        >
-          / 2
-        </span>
 
         <div className="thumbContainer">
           <div className={`thumbnail ${page}`}></div>
