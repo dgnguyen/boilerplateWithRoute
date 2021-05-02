@@ -1,10 +1,9 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
-// import Loading from "../Pages/Loading"
+
 
 const Body = ({ page, history, toggleMenu }) => {
   const classRightContainer = toggleMenu ? "collapsed" : "expanded";
-  const srcImg = page === "pieapple" ? "ananas" : "chou";
   return (
     <div className={`rightContainer ${classRightContainer}`}>
       <div className="header">
@@ -65,7 +64,6 @@ const Body = ({ page, history, toggleMenu }) => {
       </div>
 
       <div className={`bigBg ${page}`}>
-        <img src={`/images/${srcImg}.png`} />
       </div>
       <div className={`titleContainer`}>
         <div className="title">
@@ -117,9 +115,7 @@ const Body = ({ page, history, toggleMenu }) => {
           </div>
         </div>
       </div>
-      {/* <div>
-      <Loading page="loading" />
-      </div> */}
+     
     </div>
   );
 };

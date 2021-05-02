@@ -3,8 +3,10 @@ import { withRouter } from "react-router-dom";
 import Panel from "../components/Panel";
 
 const Menu = ({ toggleMenu, setToggleMenu, slide }) => {
+  
   const btnMenu = toggleMenu ? "btn-close" : "btn-menu";
   const classLeftContainer = toggleMenu ? "expanded" : "collpased";
+
   return (
     <div className={`leftContainer ${classLeftContainer}`}>
       <div className="menuCollapsed">

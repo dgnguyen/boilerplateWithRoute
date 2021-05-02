@@ -2,8 +2,10 @@ import React from "react";
 import "../App.scss";
 
 const Panel = ({ slide, toggleMenu }) => {
+
   const classNameTomate = toggleMenu ? "show" : "hide";
   const cleanTomate = slide ? "slideIn" : "slideOut";
+  
   return (
     <div className={`menuExpanded ${classNameTomate}`}>
       <div className="panel">
