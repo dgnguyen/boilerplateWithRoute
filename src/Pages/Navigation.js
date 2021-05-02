@@ -9,6 +9,10 @@ const Navigation = () => {
     <Router>
       <Switch>
         <Route path="/brocoli" render={() => <Brocoli />} />
+<<<<<<< HEAD
+=======
+        {/* il faut que home soit toujours en bas */}
+>>>>>>> origin
         <Route path="/" render={() => <PieApple />} />
       </Switch>
     </Router>
