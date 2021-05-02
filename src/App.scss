@@ -385,9 +385,12 @@ p {
     opacity: 1;
   }
   50% {
-    transform: translateX(-400px);
+    transform: translateX(-200px);
     opacity: 0;
-    
+    -webkit-transform: translateX(-200px);
+    -moz-transform: translateX(-200px);
+    -ms-transform: translateX(-200px);
+    -o-transform: translateX(-200px);
 }
   100% {
     transform: translateX(0px);

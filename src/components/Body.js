@@ -4,10 +4,6 @@ import { withRouter } from "react-router-dom";
 
 const Body = ({ page, history, toggleMenu }) => {
   const classRightContainer = toggleMenu ? "collapsed" : "expanded";
-<<<<<<< HEAD
-=======
-  const srcImg = page === "pieapple" ? "ananas" : "chou";
->>>>>>> origin
   return (
     <div className={`rightContainer ${classRightContainer}`}>
       <div className="header">
@@ -68,10 +64,6 @@ const Body = ({ page, history, toggleMenu }) => {
       </div>
 
       <div className={`bigBg ${page}`}>
-<<<<<<< HEAD
-=======
-        <img src={`/images/${srcImg}.png`} />
->>>>>>> origin
       </div>
       <div className={`titleContainer`}>
         <div className="title">
