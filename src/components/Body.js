@@ -1,67 +1,13 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
+import Header from "../components/Header";
 
 
 const Body = ({ page, history, toggleMenu }) => {
   const classRightContainer = toggleMenu ? "collapsed" : "expanded";
   return (
     <div className={`rightContainer ${classRightContainer}`}>
-      <div className="header">
-        <div className="subMenu">
-          <ul>
-            <li>
-              <div className="hyphen" />
-              <h1>Our product</h1>
-            </li>
-          </ul>
-        </div>
-        <div className="subMenu">
-          <ul>
-            <li>
-              <div className="hyphen" />
-              pinapples
-            </li>
-            <li>
-              <div className="hyphen" />
-              pinapples
-            </li>
-            <li>
-              <div className="hyphen" />
-              pinapples
-            </li>
-            <li>
-              <div className="hyphen" />
-              pinapples
-            </li>
-          </ul>
-        </div>
-        <div className="subMenu">
-          <ul>
-            <li>
-              <div className="hyphen" />
-              Cauliflowers
-            </li>
-            <li>
-              <div className="hyphen" />
-              Cauliflowers
-            </li>
-            <li>
-              <div className="hyphen" />
-              Cauliflowers
-            </li>
-            <li>
-              <div className="hyphen" />
-              pinapples
-            </li>
-          </ul>
-        </div>
-        <div className="socialIcons">
-          <div className="twitter"></div>
-          <div className="youtube"></div>
-          <div className="instagram"></div>
-          <div className="facebook"></div>
-        </div>
-      </div>
+      <Header/>
 
       <div className={`bigBg ${page}`}>
       </div>
@@ -72,6 +18,9 @@ const Body = ({ page, history, toggleMenu }) => {
         </div>
         <div className="subtitle">
           <p>
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+            commodo ligula eget dolor. Aenean massa. Cum sociis natoque
+            penatibus et magnis dis parturient montes, nascetur ridiculus mus.
             Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
             commodo ligula eget dolor. Aenean massa. Cum sociis natoque
             penatibus et magnis dis parturient montes, nascetur ridiculus mus.
@@ -86,7 +35,7 @@ const Body = ({ page, history, toggleMenu }) => {
           className="pageNumber"
           style={{
             color: "#F1D145",
-            fontSize: "70px",
+            fontSize: "100px",
             fontFamily: "Acumin Pro",
           }}
         >

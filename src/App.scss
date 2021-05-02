@@ -1,6 +1,7 @@
 @font-face {
   font-family: "Acumin Pro";
-  src: url(./font/Acumin-BdPro.otf);
+ src: url(./font/Acumin-BdPro.otf);
+  
 }
 
 .App {
@@ -13,6 +14,7 @@
   padding-top: 50px;
 }
 
+// LEFT CONTAINER
 .leftContainer {
   width: 150px;
   height: 1080px;
@@ -165,7 +167,7 @@
     }
   }
 }
-
+// RIGHT CONTAINER
 .rightContainer {
   width: 1770px;
   height: 1080px;
@@ -276,8 +278,8 @@
     position: absolute;
     width: 1700px;
     display: flex;
-    top:850px;
-    left:150px;
+    top:920px;
+    left:170px;
     align-items: center;
     .pageNumber {
       padding: 20px;

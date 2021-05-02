@@ -1,7 +1,7 @@
 import React from "react";
 import "../App.scss";
 
-export default () => (
+const Header =  () => (
   <div className="header">
     <div className="subMenu">
       <ul>
@@ -60,3 +60,4 @@ export default () => (
     </div>
   </div>
 );
+export default Header
